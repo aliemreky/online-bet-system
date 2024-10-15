@@ -1,7 +1,9 @@
 package com.online.bet.system.controller;
 
+import com.online.bet.system.dto.CreateMatchCommand;
 import com.online.bet.system.model.MatchDto;
 import com.online.bet.system.service.match.MatchDomainService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,7 @@ public class MatchController {
     }
 
     @PostMapping("/add")
-    public Boolean addMatch(@RequestBody MatchDto createMatchCommand) {
+    public Boolean createMatch(@Valid @RequestBody CreateMatchCommand createMatchCommand) {
         matchDomainService.createMatch(createMatchCommand);
         return true;
     }

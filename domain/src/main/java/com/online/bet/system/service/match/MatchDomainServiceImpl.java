@@ -1,5 +1,6 @@
 package com.online.bet.system.service.match;
 
+import com.online.bet.system.dto.CreateMatchCommand;
 import com.online.bet.system.model.MatchDto;
 import com.online.bet.system.ports.output.MatchRepository;
 
@@ -15,8 +16,8 @@ public class MatchDomainServiceImpl implements MatchDomainService {
     }
 
     @Override
-    public void createMatch(MatchDto matchDto) {
-        matchRepository.saveMatch(matchDto);
+    public void createMatch(CreateMatchCommand createMatchCommand) {
+        matchRepository.saveMatch(createMatchCommand);
     }
 
     @Override

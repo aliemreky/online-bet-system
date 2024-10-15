@@ -1,5 +1,6 @@
 package com.online.bet.system.mapper;
 
+import com.online.bet.system.dto.CreateMatchCommand;
 import com.online.bet.system.entity.Match;
 import com.online.bet.system.model.MatchDto;
 import com.online.bet.system.valueobject.Rate;
@@ -31,6 +32,18 @@ public class MatchMapper {
                 .league(matchDto.getLeague())
                 .startTime(matchDto.getStartTime())
                 .homeTeam(matchDto.getHomeTeam())
+                .build();
+    }
+
+    public Match createMatchCommandToMatchEntity(CreateMatchCommand createMatchCommand){
+        return Match.builder()
+                .awayTeam(createMatchCommand.getAwayTeam())
+                .awayWinRate(createMatchCommand.getAwayWinRate())
+                .homeWinRate(createMatchCommand.getHomeWinRate())
+                .drawRate(createMatchCommand.getDrawRate())
+                .league(createMatchCommand.getLeague())
+                .startTime(createMatchCommand.getStartTime())
+                .homeTeam(createMatchCommand.getHomeTeam())
                 .build();
     }
 

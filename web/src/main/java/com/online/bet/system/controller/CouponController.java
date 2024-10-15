@@ -19,7 +19,8 @@ public class CouponController {
     }
 
     @PostMapping("/create")
-    public void createCoupon(@Valid @RequestBody CreateCouponCommand createCouponCommand) {
+    public Boolean createCoupon(@Valid @RequestBody CreateCouponCommand createCouponCommand) {
         couponDomainService.createCoupon(createCouponCommand);
+        return true;
     }
 }

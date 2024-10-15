@@ -2,6 +2,6 @@ package com.online.bet.system.valueobject;
 
 public enum CouponStatus {
     CREATED,
-    SUCCESS,
+    PLAYED,
     CANCELLED_TIMEOUT
 }

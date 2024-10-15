@@ -6,6 +6,7 @@ import com.online.bet.system.model.CouponDto;
 import com.online.bet.system.model.MatchDto;
 import com.online.bet.system.ports.output.CouponRepository;
 import com.online.bet.system.ports.output.MatchRepository;
+import com.online.bet.system.valueobject.CouponStatus;
 import com.online.bet.system.valueobject.Rate;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -40,6 +41,8 @@ public class CouponDomainServiceImpl implements CouponDomainService {
         coupon.setBetTime(LocalDateTime.now());
         coupon.setBetRate(betRate);
         coupon.setCouponCount(createCouponCommand.getCouponCount());
+        coupon.setMatchId(match.getId());
+        coupon.setCouponStatus(CouponStatus.CREATED);
 
         couponRepository.saveCoupon(coupon);
     }
