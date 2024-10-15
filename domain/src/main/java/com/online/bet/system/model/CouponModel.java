@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CouponDto {
+public class CouponModel {
 
     private Long id;
     private Long matchId;

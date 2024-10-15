@@ -2,15 +2,15 @@ package com.online.bet.system.mapper;
 
 import com.online.bet.system.dto.CreateMatchCommand;
 import com.online.bet.system.entity.Match;
-import com.online.bet.system.model.MatchDto;
+import com.online.bet.system.model.MatchModel;
 import com.online.bet.system.valueobject.Rate;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MatchMapper {
 
-    public MatchDto matchEntityToMatchDto(Match match) {
-        return MatchDto.builder()
+    public MatchModel matchEntityToMatchDto(Match match) {
+        return MatchModel.builder()
                 .id(match.getId())
                 .awayTeam(match.getAwayTeam())
                 .awayWinRate(new Rate(match.getAwayWinRate()))
@@ -22,16 +22,16 @@ public class MatchMapper {
                 .build();
     }
 
-    public Match matchDtoToMatchEntity(MatchDto matchDto) {
+    public Match matchDtoToMatchEntity(MatchModel matchModel) {
         return Match.builder()
-                .id(matchDto.getId())
-                .awayTeam(matchDto.getAwayTeam())
-                .awayWinRate(matchDto.getAwayWinRate().getRate())
-                .homeWinRate(matchDto.getHomeWinRate().getRate())
-                .drawRate(matchDto.getDrawRate().getRate())
-                .league(matchDto.getLeague())
-                .startTime(matchDto.getStartTime())
-                .homeTeam(matchDto.getHomeTeam())
+                .id(matchModel.getId())
+                .awayTeam(matchModel.getAwayTeam())
+                .awayWinRate(matchModel.getAwayWinRate().getRate())
+                .homeWinRate(matchModel.getHomeWinRate().getRate())
+                .drawRate(matchModel.getDrawRate().getRate())
+                .league(matchModel.getLeague())
+                .startTime(matchModel.getStartTime())
+                .homeTeam(matchModel.getHomeTeam())
                 .build();
     }
 

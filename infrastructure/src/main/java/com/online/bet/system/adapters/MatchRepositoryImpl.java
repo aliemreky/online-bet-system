@@ -3,7 +3,7 @@ package com.online.bet.system.adapters;
 import com.online.bet.system.dto.CreateMatchCommand;
 import com.online.bet.system.entity.Match;
 import com.online.bet.system.mapper.MatchMapper;
-import com.online.bet.system.model.MatchDto;
+import com.online.bet.system.model.MatchModel;
 import com.online.bet.system.ports.output.MatchRepository;
 import com.online.bet.system.repository.MatchJpaRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -30,8 +30,8 @@ public class MatchRepositoryImpl implements MatchRepository {
     }
 
     @Override
-    public void saveAllMatch(List<MatchDto> matchDtoList) {
-        matchJpaRepository.saveAll(matchDtoList.stream()
+    public void saveAllMatch(List<MatchModel> matchModelList) {
+        matchJpaRepository.saveAll(matchModelList.stream()
                 .map(matchDto -> matchMapper.matchDtoToMatchEntity(matchDto))
                 .toList());
         log.info("The matches was created successfully");
@@ -39,12 +39,12 @@ public class MatchRepositoryImpl implements MatchRepository {
     }
 
     @Override
-    public Optional<MatchDto> findById(Long matchId) {
+    public Optional<MatchModel> findById(Long matchId) {
         return matchJpaRepository.findById(matchId).map(matchMapper::matchEntityToMatchDto);
     }
 
     @Override
-    public List<MatchDto> getMatchDtoList() {
+    public List<MatchModel> getMatchDtoList() {
         return matchJpaRepository.findAll()
                 .stream()
                 .map(match -> matchMapper.matchEntityToMatchDto(match))

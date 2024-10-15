@@ -1,7 +1,7 @@
 package com.online.bet.system.scheduler;
 
 import com.online.bet.system.dto.CreateMatchLogCommand;
-import com.online.bet.system.model.MatchDto;
+import com.online.bet.system.model.MatchModel;
 import com.online.bet.system.ports.output.MatchLogRepository;
 import com.online.bet.system.ports.output.MatchRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -23,13 +23,13 @@ public class MatchSchedulerHelper {
 
     @Scheduled(fixedRate = 1000)
     public void updateOddsForAllMatches() {
-        List<MatchDto> matchDtoList = matchRepository.getMatchDtoList();
-        if (!matchDtoList.isEmpty()) {
-            matchDtoList.forEach(matchDto -> {
+        List<MatchModel> matchModelList = matchRepository.getMatchDtoList();
+        if (!matchModelList.isEmpty()) {
+            matchModelList.forEach(matchDto -> {
                 matchLogRepository.saveMatchLog(new CreateMatchLogCommand(matchDto.getId()));
                 matchDto.updateOdds();
             });
-            matchRepository.saveAllMatch(matchDtoList);
+            matchRepository.saveAllMatch(matchModelList);
         }
     }
 }

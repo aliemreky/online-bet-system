@@ -3,14 +3,14 @@ package com.online.bet.system.mapper;
 import com.online.bet.system.dto.MatchLogResponse;
 import com.online.bet.system.entity.Match;
 import com.online.bet.system.entity.MatchLog;
-import com.online.bet.system.model.MatchLogDto;
+import com.online.bet.system.model.MatchLogModel;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MatchLogMapper {
 
-    public MatchLogDto matchLogToMatchLogDto(MatchLog logEntity) {
-        return MatchLogDto.builder()
+    public MatchLogModel matchLogToMatchLogDto(MatchLog logEntity) {
+        return MatchLogModel.builder()
                 .id(logEntity.getId())
                 .matchId(logEntity.getMatch().getId())
                 .homeWinRate(logEntity.getHomeWinRate())
@@ -20,7 +20,7 @@ public class MatchLogMapper {
                 .build();
     }
 
-    public MatchLog matchLogDtoToMatchLog(MatchLogDto dto, Match matchEntity) {
+    public MatchLog matchLogDtoToMatchLog(MatchLogModel dto, Match matchEntity) {
         return MatchLog.builder()
                 .id(dto.getId())
                 .match(matchEntity)

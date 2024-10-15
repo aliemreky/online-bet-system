@@ -2,7 +2,7 @@ package com.online.bet.system.adapters;
 
 import com.online.bet.system.entity.Match;
 import com.online.bet.system.mapper.CouponMapper;
-import com.online.bet.system.model.CouponDto;
+import com.online.bet.system.model.CouponModel;
 import com.online.bet.system.ports.output.CouponRepository;
 import com.online.bet.system.repository.CouponJpaRepository;
 import com.online.bet.system.repository.MatchJpaRepository;
@@ -26,12 +26,12 @@ public class CouponRepositoryImpl implements CouponRepository {
 
     @Transactional
     @Override
-    public void saveCoupon(CouponDto couponDto) {
-        Optional<Match> optionalMatch = matchJpaRepository.findById(couponDto.getMatchId());
+    public void saveCoupon(CouponModel couponModel) {
+        Optional<Match> optionalMatch = matchJpaRepository.findById(couponModel.getMatchId());
 
         if (optionalMatch.isPresent()) {
             Match match = optionalMatch.get();
-            couponJpaRepository.save(couponMapper.couponToCouponDto(couponDto, match));
+            couponJpaRepository.save(couponMapper.couponToCouponDto(couponModel, match));
         }
     }
 

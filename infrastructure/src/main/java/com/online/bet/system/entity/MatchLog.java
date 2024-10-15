@@ -24,7 +24,9 @@ public class MatchLog {
     private Match match;
 
     private BigDecimal homeWinRate;
+
     private BigDecimal drawRate;
+
     private BigDecimal awayWinRate;
 
     private LocalDateTime rateChangeTime;

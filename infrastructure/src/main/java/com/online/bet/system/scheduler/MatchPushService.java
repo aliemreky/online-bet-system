@@ -27,7 +27,7 @@ public class MatchPushService {
         this.matchLogMapper = matchLogMapper;
     }
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 1000)
     public void pushDataToClients() {
         List<MatchLog> matchLogs = matchLogJpaRepository.findAllOrderByAsc();
 

@@ -1,7 +1,7 @@
 package com.online.bet.system.service.match;
 
 import com.online.bet.system.dto.CreateMatchCommand;
-import com.online.bet.system.model.MatchDto;
+import com.online.bet.system.model.MatchModel;
 import com.online.bet.system.ports.output.MatchRepository;
 
 import java.util.List;
@@ -21,12 +21,12 @@ public class MatchDomainServiceImpl implements MatchDomainService {
     }
 
     @Override
-    public Optional<MatchDto> findById(Long matchId) {
+    public Optional<MatchModel> findById(Long matchId) {
         return matchRepository.findById(matchId);
     }
 
     @Override
-    public List<MatchDto> getMatchDtoList() {
+    public List<MatchModel> getMatchDtoList() {
         return matchRepository.getMatchDtoList();
     }
 

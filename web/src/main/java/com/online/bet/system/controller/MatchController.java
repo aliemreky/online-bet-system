@@ -1,7 +1,6 @@
 package com.online.bet.system.controller;
 
 import com.online.bet.system.dto.CreateMatchCommand;
-import com.online.bet.system.model.MatchDto;
 import com.online.bet.system.service.match.MatchDomainService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;

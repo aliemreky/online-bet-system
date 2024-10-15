@@ -10,7 +10,7 @@
 - Hexagonal Architecture
 - Domain Driven Design
 
-## POSTMAN COLLECTION
+**Postman Collection**
 
     You can use postman collection from 'OnlineBetApplication.postman_collection.json'
 

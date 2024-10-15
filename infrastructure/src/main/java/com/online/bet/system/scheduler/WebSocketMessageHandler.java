@@ -15,12 +15,11 @@ import java.util.Set;
 @Component
 public class WebSocketMessageHandler extends TextWebSocketHandler {
 
-    // Bağlanan istemcileri takip etmek için bir set
     private final Set<WebSocketSession> sessions = new HashSet<>();
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) {
-        sessions.add(session);  // Yeni bağlanan istemciyi listeye ekle
+        sessions.add(session);
         log.info("New client connected: " + session.getId());
     }
 

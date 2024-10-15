@@ -2,8 +2,8 @@ package com.online.bet.system.service.coupon;
 
 import com.online.bet.system.dto.CreateCouponCommand;
 import com.online.bet.system.exception.DomainException;
-import com.online.bet.system.model.CouponDto;
-import com.online.bet.system.model.MatchDto;
+import com.online.bet.system.model.CouponModel;
+import com.online.bet.system.model.MatchModel;
 import com.online.bet.system.ports.output.CouponRepository;
 import com.online.bet.system.ports.output.MatchRepository;
 import com.online.bet.system.valueobject.CouponStatus;
@@ -27,7 +27,7 @@ public class CouponDomainServiceImpl implements CouponDomainService {
 
     @Override
     public void createCoupon(CreateCouponCommand createCouponCommand) {
-        MatchDto match = matchRepository.findById(createCouponCommand.getMatchId())
+        MatchModel match = matchRepository.findById(createCouponCommand.getMatchId())
                 .orElseThrow(() -> new DomainException("Match not found"));
 
         Rate betRate = switch (createCouponCommand.getBetType()) {
@@ -37,7 +37,7 @@ public class CouponDomainServiceImpl implements CouponDomainService {
             default -> throw new DomainException("Invalid bet type");
         };
 
-        CouponDto coupon = new CouponDto();
+        CouponModel coupon = new CouponModel();
         coupon.setBetTime(LocalDateTime.now());
         coupon.setBetRate(betRate);
         coupon.setCouponCount(createCouponCommand.getCouponCount());

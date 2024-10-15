@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MatchLogDto {
+public class MatchLogModel {
 
     private Long id;
 
