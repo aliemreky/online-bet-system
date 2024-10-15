@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"id\": 1,\n  \"league\": \"Premier League\",\n  \"homeTeam\": \"Manchester United\",\n  \"awayTeam\": \"Chelsea\",\n  \"homeWinRate\": 1.75,\n  \"drawRate\": 3.50,\n  \"awayWinRate\": 4.00,\n  \"startTime\": \"2024-10-13T21:00:00\"\n}",
+					"raw": "{\n  \"league\": \"Premier League\",\n  \"homeTeam\": \"Manchester United\",\n  \"awayTeam\": \"Chelsea\",\n  \"homeWinRate\": 1.75,\n  \"drawRate\": 3.50,\n  \"awayWinRate\": 4.00,\n  \"startTime\": \"2024-10-13T21:00:00\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -43,7 +43,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"couponCount\": 100,\n  \"matchId\": 1,\n  \"betType\": \"HOME_WIN\"\n}",
+					"raw": "{\n  \"couponCount\": 1,\n  \"matchId\": 1,\n  \"betType\": \"HOME_WIN\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
