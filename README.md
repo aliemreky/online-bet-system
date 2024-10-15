@@ -10,6 +10,15 @@
 - Hexagonal Architecture
 - Domain Driven Design
 
+## Project Initialize
+
+    First,
+    mvn clean compile package install
+
+    After,
+    cd application
+    java -jar target/application-1.0-SNAPSHOT.jar
+
 **Postman Collection**
 
     You can use postman collection from 'OnlineBetApplication.postman_collection.json'
